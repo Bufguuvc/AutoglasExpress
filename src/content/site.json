@@ -36,7 +36,7 @@
         "title": "Autoruder",
         "description": "Idag er vi i stand til at udskifte bilruder og gøre biler med airbags køreklar i løbet af 4-5 timer, så du hurtigt og effektivt kan komme videre.",
         "path": "/autoruder",
-        "image": "/bjarne_larsen.png"
+        "image": "/Bjarne_Larsen copy.png"
       },
       {
         "title": "Stenslag",
@@ -60,7 +60,7 @@
   },
   "autoruder": {
     "title": "Autoruder",
-    "heroImage": "/bjarne_larsen.png",
+    "heroImage": "/Bjarne_Larsen copy.png",
     "subtitle": "Professionel udskiftning af bilruder med hurtig service og høj kvalitet. Vi gør biler med airbags køreklar i løbet af 4-5 timer.",
     "features": [
       {
