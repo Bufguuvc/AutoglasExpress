@@ -64,7 +64,7 @@ const Forside = () => {
             }}
           ></div>
           
-          {/* Local MP4 Video */}
+          {/* Primary Video Element */}
           <video
             autoPlay
             loop
@@ -80,8 +80,6 @@ const Forside = () => {
               // Hide fallback when video loads successfully
               const fallback = e.currentTarget.parentElement?.querySelector('div') as HTMLElement;
               if (fallback) fallback.style.opacity = '0';
-              // Set playback speed to 0.75x (75% of normal speed)
-              e.currentTarget.playbackRate = 0.75;
             }}
             onError={(e) => {
               // Hide broken video and show fallback
@@ -91,41 +89,6 @@ const Forside = () => {
             aria-label="Autoglas Express Rudeskift Service Video"
           >
             <source src="/Rudeskift.mp4" type="video/mp4" />
-            
-            {/* Fallback for browsers that don't support video */}
-            <img 
-              src="/Bjarne_Larsen.png" 
-              alt="Autoglas Express Service" 
-              className="w-full h-full object-cover"
-            />
-          </video>
-          
-          {/* Optimized Video Element */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-            className="w-full h-full object-cover transition-opacity duration-500"
-            style={{ 
-              filter: 'contrast(1.1) brightness(0.9)',
-              objectPosition: 'center center'
-            }}
-            onLoadedData={(e) => {
-              // Hide fallback when video loads successfully
-              const fallback = e.currentTarget.parentElement?.previousElementSibling as HTMLElement;
-              if (fallback) fallback.style.opacity = '0';
-            }}
-            onError={(e) => {
-              // Hide broken video and show fallback
-              e.currentTarget.style.display = 'none';
-              console.warn('Video failed to load, using fallback image');
-            }}
-          >
-            {/* Multiple source formats for optimal compatibility and performance */}
-            <source src="/hero-video-optimized.webm" type="video/webm" />
-            <source src="/hero-video-optimized.mp4" type="video/mp4" />
             
             {/* Fallback for browsers that don't support video */}
             <img 

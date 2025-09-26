@@ -2,19 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CHANGE 5: Updated font import to Times New Roman */
-@import url('https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@300;400;500;600;700&display=swap');
-
 body {
-  /* CHANGE 5: Applied Times New Roman font family to entire website */
   font-family: 'Times New Roman', serif;
-  /* Typography improvement: Increased base font size for better readability */
   font-size: 18px;
+  margin: 0;
+  padding: 0;
+  background-color: #212529;
+  color: white;
 }
 
-/* CHANGE 5: Ensure all text elements use Times New Roman */
 * {
+  box-sizing: border-box;
   font-family: 'Times New Roman', serif !important;
+}
+
+/* Ensure proper root styling */
+#root {
+  min-height: 100vh;
+  width: 100%;
 }
 
 /* Prefers reduced motion - pause video for accessibility */
