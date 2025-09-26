@@ -2,18 +2,8 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{ts,tsx,js,jsx}"
   ],
-  theme: {
-    extend: {
-      colors: {
-        primary: '#09a9d5',
-        dark: '#212529',
-      },
-      fontFamily: {
-        'times': ['Times New Roman', 'serif'],
-      },
-    },
-  },
-  plugins: [],
+  theme: { extend: {} },
+  plugins: []
 }
