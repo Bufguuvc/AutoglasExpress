@@ -6,7 +6,7 @@ const Kontakt = () => {
   const c = content.kontakt;
 
   return (
-    <div className="min-h-screen bg-[#212529] py-16">
+    <div className="min-h-screen bg-[#212529] py-16 kontakt-hero-desktop">
       <div className="max-w-6xl mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
