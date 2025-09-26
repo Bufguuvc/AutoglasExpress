@@ -1,23 +1,13 @@
 import React from 'react';
 import { Sun, Shield, Award, CheckCircle } from 'lucide-react';
+import content from '../content/site.json';
 
 const Solfilm = () => {
+  const c = content.solfilm;
   const benefits = [
-    {
-      icon: Sun,
-      title: 'UV-beskyttelse',
-      description: 'Beskytter mod skadelige UV-stråler og reducerer varme i bilen'
-    },
-    {
-      icon: Shield,
-      title: 'Privatliv',
-      description: 'Øget privatliv og sikkerhed med diskret tonet glas'
-    },
-    {
-      icon: Award,
-      title: '3M Kvalitet',
-      description: 'Vi bruger kun solfilm fra 3M med lang holdbarhed'
-    }
+    { icon: Sun, ...c.benefits[0] },
+    { icon: Shield, ...c.benefits[1] },
+    { icon: Award, ...c.benefits[2] }
   ];
 
   return (
@@ -26,11 +16,10 @@ const Solfilm = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Solfilm
+            {c.title}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Professionel montering af solfilm med 20 års erfaring. Vi bruger kun 
-            kvalitetsfilm fra 3M der har lang holdbarhed og ikke falmer.
+            {c.subtitle}
           </p>
         </div>
 
@@ -59,51 +48,21 @@ const Solfilm = () => {
               Hvorfor vælge vores solfilm?
             </h2>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">20 års erfaring</h4>
-                  <p className="text-gray-400">
-                    Vi har monteret solfilm i over 20 år og kender alle tricks
-                  </p>
+              {c.features.map((feature, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">{feature.title}</h4>
+                    <p className="text-gray-400">{feature.text}</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">3M Kvalitet</h4>
-                  <p className="text-gray-400">
-                    Vi bruger kun solfilm fra 3M - verdens førende producent
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Lang holdbarhed</h4>
-                  <p className="text-gray-400">
-                    Vores solfilm falmer ikke og holder i mange år
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Lovlig toning</h4>
-                  <p className="text-gray-400">
-                    Vi sørger for at solfilmen overholder danske regler
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           
           <div>
             <img 
-              src="/Solfilm.png" 
+              src={c.heroImage} 
               alt="Professionel solfilm montering"
               className="w-full rounded-lg shadow-lg"
             />
@@ -116,45 +75,33 @@ const Solfilm = () => {
             Forskellige typer solfilm
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-gray-700 rounded-lg p-6">
-              <h4 className="text-xl font-semibold text-white mb-3">Standard solfilm</h4>
-              <p className="text-gray-300 mb-4">
-                Grundlæggende UV-beskyttelse og reduceret varme. Perfekt til daglig brug.
-              </p>
-              <ul className="text-gray-400 space-y-1">
-                <li>• UV-beskyttelse op til 99%</li>
-                <li>• Reducerer varme med 35-50%</li>
-                <li>• Forskellige tonegrader</li>
-              </ul>
-            </div>
-            
-            <div className="bg-gray-700 rounded-lg p-6">
-              <h4 className="text-xl font-semibold text-white mb-3">Premium solfilm</h4>
-              <p className="text-gray-300 mb-4">
-                Avanceret teknologi med maksimal komfort og beskyttelse.
-              </p>
-              <ul className="text-gray-400 space-y-1">
-                <li>• UV-beskyttelse op til 99.9%</li>
-                <li>• Reducerer varme med 60-80%</li>
-                <li>• Ingen interferens med elektronik</li>
-              </ul>
-            </div>
+            {c.types.map((type, index) => (
+              <div key={index} className="bg-gray-700 rounded-lg p-6">
+                <h4 className="text-xl font-semibold text-white mb-3">{type.title}</h4>
+                <p className="text-gray-300 mb-4">{type.description}</p>
+                <ul className="text-gray-400 space-y-1">
+                  {type.features.map((feature, featureIndex) => (
+                    <li key={featureIndex}>• {feature}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Call to Action */}
         <div className="text-center">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Interesseret i solfilm?
+            {c.cta.title}
           </h3>
           <p className="text-gray-300 mb-8">
-            Kontakt os for et uforpligtende tilbud på solfilm til din bil
+            {c.cta.subtitle}
           </p>
           <a 
-            href="tel:24626371" 
+            href={`tel:${content.global.phoneLink}`} 
             className="inline-block bg-[#09a9d5] hover:bg-[#0891b2] text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors"
           >
-            Ring nu: 24 62 63 71
+            Ring nu: {content.global.phone}
           </a>
         </div>
       </div>

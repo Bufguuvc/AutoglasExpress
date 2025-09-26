@@ -1,0 +1,339 @@
+{
+  "forside": {
+    "heroTitle": "Autoglas Express",
+    "address": "Middelfartvej 299, 5200 Odense V",
+    "cta": "Ring nu",
+    "phone": "24626371",
+    "usp": [
+      {
+        "title": "2 års garanti",
+        "text": "På bilruder og korrekt montering"
+      },
+      {
+        "title": "Dækket af din forsikring", 
+        "text": "Glasskader dækket af forsikringen (ved kasko)"
+      },
+      {
+        "title": "Gratis stenslag",
+        "text": "Ofte betalt af forsikringen, hvis du har glasforsikring"
+      },
+      {
+        "title": "Gratis kundebil",
+        "text": "Ved udskiftning af din forrude"
+      }
+    ],
+    "insuranceText": "Vi samarbejder med alle forsikringsselskaber",
+    "customerCarSection": {
+      "title": "Gratis kundebil ved udskiftning af din forrude.",
+      "details": [
+        "Kundebil er altid tanket og rengjort ved udlejning.",
+        "Det eneste du betaler er 1 kr pr km du kører i bilen som dækker brændstof.",
+        "Ved kørsel over 100 km giver du 1.5 kr pr km."
+      ]
+    },
+    "services": [
+      {
+        "title": "Autoruder",
+        "description": "Idag er vi i stand til at udskifte bilruder og gøre biler med airbags køreklar i løbet af 4-5 timer, så du hurtigt og effektivt kan komme videre.",
+        "path": "/autoruder",
+        "image": "/bjarne_larsen.png"
+      },
+      {
+        "title": "Stenslag",
+        "description": "Har du fået en skade på en af dine ruder i bilen, så kontakt os straks da sandsynligheden for en succesfuld reparation stiger meget, hvis der ikke er kommet snavs i stenslaget.",
+        "path": "/stenslag",
+        "image": "/stenslag.jpg"
+      },
+      {
+        "title": "Solfilm",
+        "description": "Autoglas Express har 20 års erfaring i montering af solfilm som har en lang holdbarhed og ikke falmer. Vi har valgt kun at bruge solfilm fra 3M.",
+        "path": "/solfilm",
+        "image": "/solfilm.png"
+      },
+      {
+        "title": "Kalibrering",
+        "description": "Hos Autoglas Express har vi det professionelle udstyr der skal til, for at du kan være sikker på, at alt udstyr fungerer perfekt, også når du har fået skiftet din forrude.",
+        "path": "/kalibrering",
+        "image": "/kalibrering_2.png"
+      }
+    ]
+  },
+  "autoruder": {
+    "title": "Autoruder",
+    "heroImage": "/bjarne_larsen.png",
+    "subtitle": "Professionel udskiftning af bilruder med hurtig service og høj kvalitet. Vi gør biler med airbags køreklar i løbet af 4-5 timer.",
+    "features": [
+      {
+        "title": "4-5 timers service",
+        "description": "Hurtig udskiftning af bilruder, så du kan komme videre samme dag"
+      },
+      {
+        "title": "2 års garanti",
+        "description": "Fuld garanti på både bilruder og korrekt montering"
+      },
+      {
+        "title": "Professionel kvalitet",
+        "description": "Over 20 års erfaring med bilrudeservice"
+      }
+    ],
+    "benefits": [
+      {
+        "title": "Hurtig service",
+        "text": "Vi kan udskifte din bilrude og gøre biler med airbags køreklar på 4-5 timer"
+      },
+      {
+        "title": "Kvalitetsruder",
+        "text": "Vi bruger kun originale eller tilsvarende kvalitetsruder fra anerkendte leverandører"
+      },
+      {
+        "title": "Forsikringsdækning",
+        "text": "Glasskader er ofte dækket af din kaskoforsikring - vi hjælper med papirarbejdet"
+      },
+      {
+        "title": "Gratis kundebil",
+        "text": "Ved udskiftning af forrude tilbyder vi gratis kundebil, så du kan komme rundt"
+      }
+    ],
+    "cta": {
+      "title": "Har du brug for en ny bilrude?",
+      "subtitle": "Kontakt os i dag for et uforpligtende tilbud"
+    }
+  },
+  "stenslag": {
+    "title": "Stenslag Reparation",
+    "heroImage": "/stenslag.jpg",
+    "subtitle": "Hurtig og professionel reparation af stenslag. Kontakt os straks for den bedste chance for en succesfuld reparation.",
+    "warning": {
+      "title": "Vigtigt: Kontakt os straks!",
+      "text": "Sandsynligheden for en succesfuld reparation af stenslag stiger betydeligt, hvis der ikke er kommet snavs og fugt ind i stenslaget. Jo hurtigere du kontakter os, jo bedre er chancerne for reparation."
+    },
+    "benefits": [
+      {
+        "title": "Hurtig service",
+        "text": "Reparation af stenslag tager typisk 30-60 minutter"
+      },
+      {
+        "title": "Kvalitetsgaranti",
+        "text": "Vi giver garanti på vores stenslag reparationer"
+      },
+      {
+        "title": "Forsikringsdækning",
+        "text": "Stenslag reparation er ofte gratis med glasforsikring"
+      }
+    ],
+    "process": [
+      {
+        "step": "1",
+        "title": "Vurdering",
+        "description": "Vi vurderer stenslaget og afgør om det kan repareres"
+      },
+      {
+        "step": "2",
+        "title": "Reparation",
+        "description": "Professionel reparation med specialudstyr og materialer"
+      },
+      {
+        "step": "3",
+        "title": "Færdig",
+        "description": "Din bil er klar til brug efter 30-60 minutter"
+      }
+    ],
+    "cta": {
+      "title": "Har du fået stenslag?",
+      "subtitle": "Ring til os med det samme for den bedste chance for reparation"
+    }
+  },
+  "solfilm": {
+    "title": "Solfilm",
+    "heroImage": "/solfilm.png",
+    "subtitle": "Professionel montering af solfilm med 20 års erfaring. Vi bruger kun kvalitetsfilm fra 3M der har lang holdbarhed og ikke falmer.",
+    "benefits": [
+      {
+        "title": "UV-beskyttelse",
+        "description": "Beskytter mod skadelige UV-stråler og reducerer varme i bilen"
+      },
+      {
+        "title": "Privatliv",
+        "description": "Øget privatliv og sikkerhed med diskret tonet glas"
+      },
+      {
+        "title": "3M Kvalitet",
+        "description": "Vi bruger kun solfilm fra 3M med lang holdbarhed"
+      }
+    ],
+    "features": [
+      {
+        "title": "20 års erfaring",
+        "text": "Vi har monteret solfilm i over 20 år og kender alle tricks"
+      },
+      {
+        "title": "3M Kvalitet",
+        "text": "Vi bruger kun solfilm fra 3M - verdens førende producent"
+      },
+      {
+        "title": "Lang holdbarhed",
+        "text": "Vores solfilm falmer ikke og holder i mange år"
+      },
+      {
+        "title": "Lovlig toning",
+        "text": "Vi sørger for at solfilmen overholder danske regler"
+      }
+    ],
+    "types": [
+      {
+        "title": "Standard solfilm",
+        "description": "Grundlæggende UV-beskyttelse og reduceret varme. Perfekt til daglig brug.",
+        "features": [
+          "UV-beskyttelse op til 99%",
+          "Reducerer varme med 35-50%",
+          "Forskellige tonegrader"
+        ]
+      },
+      {
+        "title": "Premium solfilm",
+        "description": "Avanceret teknologi med maksimal komfort og beskyttelse.",
+        "features": [
+          "UV-beskyttelse op til 99.9%",
+          "Reducerer varme med 60-80%",
+          "Ingen interferens med elektronik"
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Interesseret i solfilm?",
+      "subtitle": "Kontakt os for et uforpligtende tilbud på solfilm til din bil"
+    }
+  },
+  "kalibrering": {
+    "title": "Kalibrering",
+    "heroImage": "/kalibrering_2.png",
+    "subtitle": "Professionel kalibrering af sikkerhedssystemer efter forrude udskiftning. Vi har det rette udstyr til at sikre alt fungerer perfekt.",
+    "warning": {
+      "title": "Vigtigt efter forrude udskiftning",
+      "text": "Moderne biler har avancerede sikkerhedssystemer der kræver kalibrering efter forrude udskiftning. Dette sikrer at alle systemer fungerer korrekt og din sikkerhed ikke kompromitteres."
+    },
+    "systems": [
+      {
+        "title": "ADAS systemer",
+        "text": "Advanced Driver Assistance Systems - alle moderne sikkerhedssystemer"
+      },
+      {
+        "title": "Lane Keeping Assist",
+        "text": "Vognbaneassistent der hjælper med at holde bilen i sporet"
+      },
+      {
+        "title": "Collision Warning",
+        "text": "Kollisionsadvarsel der advarer om forhindringer foran"
+      },
+      {
+        "title": "Adaptive Cruise Control",
+        "text": "Adaptiv fartpilot der tilpasser hastigheden efter trafikken"
+      }
+    ],
+    "equipment": [
+      {
+        "title": "Avanceret udstyr",
+        "description": "Vi har investeret i det nyeste kalibreringudstyr fra førende leverandører"
+      },
+      {
+        "title": "Certificeret proces",
+        "description": "Vores kalibrering følger producentens specifikationer nøjagtigt"
+      },
+      {
+        "title": "Kvalitetsgaranti",
+        "description": "Vi garanterer at alle systemer fungerer perfekt efter kalibrering"
+      }
+    ],
+    "process": [
+      {
+        "step": "1",
+        "title": "Diagnose",
+        "description": "Vi scanner bilens systemer for at identificere hvad der skal kalibreres"
+      },
+      {
+        "step": "2",
+        "title": "Opsætning",
+        "description": "Specialudstyr opstilles præcist efter producentens anvisninger"
+      },
+      {
+        "step": "3",
+        "title": "Kalibrering",
+        "description": "Alle relevante systemer kalibreres med præcision"
+      },
+      {
+        "step": "4",
+        "title": "Test",
+        "description": "Grundig test sikrer at alle systemer fungerer perfekt"
+      }
+    ],
+    "cta": {
+      "title": "Har du brug for kalibrering?",
+      "subtitle": "Kontakt os for professionel kalibrering efter forrude udskiftning"
+    }
+  },
+  "kontakt": {
+    "title": "Kontakt os",
+    "subtitle": "Vi er klar til at hjælpe dig med alle dine bilrudebehov. Kontakt os i dag for hurtig og professionel service.",
+    "phone": "24 62 63 71",
+    "phoneLink": "24626371",
+    "email": "info@autoglasexpress.dk",
+    "addressLines": [
+      "Middelfartvej 299",
+      "5200 Odense V"
+    ],
+    "hours": [
+      {
+        "days": "Mandag - Fredag",
+        "hours": "08:00 - 16:00"
+      },
+      {
+        "days": "Lørdag - Søndag", 
+        "hours": "Lukket"
+      }
+    ],
+    "hoursNote": "Akut service efter aftale",
+    "services": [
+      {
+        "title": "Autoruder",
+        "description": "Hurtig udskiftning på 4-5 timer"
+      },
+      {
+        "title": "Stenslag",
+        "description": "Professionel reparation"
+      },
+      {
+        "title": "Solfilm",
+        "description": "20 års erfaring med 3M film"
+      },
+      {
+        "title": "Kalibrering",
+        "description": "Sikkerhedssystemer efter forrude"
+      }
+    ],
+    "emergency": {
+      "title": "Akut bilrudeservice",
+      "text": "Har du brug for akut hjælp? Vi tilbyder service uden for normal åbningstid efter aftale.",
+      "cta": "Ring nu: 24 62 63 71"
+    },
+    "legal": {
+      "cvr": "12345678"
+    }
+  },
+  "global": {
+    "companyName": "Autoglas Express",
+    "phone": "24 62 63 71",
+    "phoneLink": "24626371",
+    "email": "info@autoglasexpress.dk",
+    "address": {
+      "street": "Middelfartvej 299",
+      "city": "5200 Odense V",
+      "full": "Middelfartvej 299, 5200 Odense V"
+    },
+    "googleMapsUrl": "https://www.google.com/maps/place/Autoglas+Express/@55.3924802,10.298997,15z/data=!3m1!4b1!4m6!3m5!1s0x464ce0aa35db047d:0x642de83e9be4afc3!8m2!3d55.3924684!4d10.3092967!16s%2Fg%2F1tkc58pr?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D",
+    "hours": {
+      "weekdays": "08:00-16:00",
+      "weekend": "Lukket",
+      "emergency": "Akut service efter aftale"
+    }
+  }
+}

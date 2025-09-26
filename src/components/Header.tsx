@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
+import content from '../content/site.json';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,11 +51,11 @@ const Header = () => {
           {/* Phone Number - Desktop */}
           <div className="hidden md:flex items-center">
             <a
-              href="tel:24626371"
+              href={`tel:${content.global.phoneLink}`}
               className="flex items-center space-x-2 bg-[#09a9d5] hover:bg-[#0891b2] text-white px-4 py-2 rounded-lg transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span className="font-medium">24 62 63 71</span>
+              <span className="font-medium">{content.global.phone}</span>
             </a>
           </div>
 
@@ -95,11 +96,11 @@ const Header = () => {
               {/* Phone Number - Mobile */}
               <div className="px-3 py-2">
                 <a
-                  href="tel:24626371"
+                  href={`tel:${content.global.phoneLink}`}
                   className="flex items-center justify-center space-x-2 bg-[#09a9d5] hover:bg-[#0891b2] text-white px-4 py-2 rounded-lg transition-colors w-full"
                 >
                   <Phone className="w-4 h-4" />
-                  <span className="font-medium">24 62 63 71</span>
+                  <span className="font-medium">{content.global.phone}</span>
                 </a>
               </div>
             </div>

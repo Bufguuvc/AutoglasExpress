@@ -1,18 +1,20 @@
 import React from 'react';
 import { Phone, Mail, MapPin, Clock, Car } from 'lucide-react';
+import content from '../content/site.json';
 
 const Kontakt = () => {
+  const c = content.kontakt;
+
   return (
     <div className="min-h-screen bg-[#212529] py-16">
       <div className="max-w-6xl mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Kontakt os
+            {c.title}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Vi er klar til at hjælpe dig med alle dine bilrudebehov. 
-            Kontakt os i dag for hurtig og professionel service.
+            {c.subtitle}
           </p>
         </div>
 
@@ -22,10 +24,10 @@ const Kontakt = () => {
             <Phone className="w-12 h-12 text-[#09a9d5] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-3">Telefon</h3>
             <a 
-              href="tel:24626371" 
+              href={`tel:${c.phoneLink}`} 
               className="text-[#09a9d5] hover:text-[#0891b2] text-lg font-medium transition-colors"
             >
-              24 62 63 71
+              {c.phone}
             </a>
             <p className="text-gray-400 mt-2">Ring for akut service</p>
           </div>
@@ -34,10 +36,10 @@ const Kontakt = () => {
             <Mail className="w-12 h-12 text-[#09a9d5] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-3">Email</h3>
             <a 
-              href="mailto:info@autoglasexpress.dk" 
+              href={`mailto:${c.email}`} 
               className="text-[#09a9d5] hover:text-[#0891b2] transition-colors"
             >
-              info@autoglasexpress.dk
+              {c.email}
             </a>
             <p className="text-gray-400 mt-2">Skriv for tilbud</p>
           </div>
@@ -46,8 +48,9 @@ const Kontakt = () => {
             <MapPin className="w-12 h-12 text-[#09a9d5] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-3">Adresse</h3>
             <div className="text-gray-300">
-              <p>Middelfartvej 299</p>
-              <p>5200 Odense V</p>
+              {c.addressLines.map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
             </div>
             <p className="text-gray-400 mt-2">Besøg vores værksted</p>
           </div>
@@ -56,10 +59,11 @@ const Kontakt = () => {
             <Clock className="w-12 h-12 text-[#09a9d5] mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-3">Åbningstider</h3>
             <div className="text-gray-300 text-sm">
-              <p>Man-Fre: 08:00-16:00</p>
-              <p>Lør-Søn: Lukket</p>
+              {c.hours.map((schedule, index) => (
+                <p key={index}>{schedule.days}: {schedule.hours}</p>
+              ))}
             </div>
-            <p className="text-gray-400 mt-2">Akut service efter aftale</p>
+            <p className="text-gray-400 mt-2">{c.hoursNote}</p>
           </div>
         </div>
 
@@ -71,10 +75,10 @@ const Kontakt = () => {
             <div className="bg-gray-700 rounded-lg h-64 flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="w-16 h-16 text-[#09a9d5] mx-auto mb-4" />
-                <p className="text-white font-semibold">Middelfartvej 299</p>
-                <p className="text-gray-400">5200 Odense V</p>
+                <p className="text-white font-semibold">{c.addressLines[0]}</p>
+                <p className="text-gray-400">{c.addressLines[1]}</p>
                 <a 
-                  href="https://www.google.com/maps/place/Autoglas+Express/@55.3924802,10.298997,15z/data=!3m1!4b1!4m6!3m5!1s0x464ce0aa35db047d:0x642de83e9be4afc3!8m2!3d55.3924684!4d10.3092967!16s%2Fg%2F1tkc58pr?entry=ttu&g_ep=EgoyMDI1MDkxNC4wIKXMDSoASAFQAw%3D%3D"
+                  href={content.global.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-4 bg-[#09a9d5] hover:bg-[#0891b2] text-white px-4 py-2 rounded-lg transition-colors"
@@ -89,43 +93,25 @@ const Kontakt = () => {
           <div className="bg-gray-800 rounded-lg p-6">
             <h3 className="text-2xl font-bold text-white mb-4">Vores services</h3>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
-                <Car className="w-6 h-6 text-[#09a9d5]" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Autoruder</h4>
-                  <p className="text-gray-400">Hurtig udskiftning på 4-5 timer</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-[#09a9d5] rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">S</span>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Stenslag</h4>
-                  <p className="text-gray-400">Professionel reparation</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-[#09a9d5] rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">☀</span>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Solfilm</h4>
-                  <p className="text-gray-400">20 års erfaring med 3M film</p>
-                </div>
-              </div>
-              
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-[#09a9d5] rounded-full flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">⚙</span>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Kalibrering</h4>
-                  <p className="text-gray-400">Sikkerhedssystemer efter forrude</p>
-                </div>
-              </div>
+              {c.services.map((service, index) => {
+                const icons = [Car, 'S', '☀', '⚙'];
+                const icon = icons[index];
+                return (
+                  <div key={index} className="flex items-center space-x-3">
+                    {index === 0 ? (
+                      <Car className="w-6 h-6 text-[#09a9d5]" />
+                    ) : (
+                      <div className="w-6 h-6 bg-[#09a9d5] rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs font-bold">{icon}</span>
+                      </div>
+                    )}
+                    <div>
+                      <h4 className="text-lg font-semibold text-white">{service.title}</h4>
+                      <p className="text-gray-400">{service.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -133,16 +119,16 @@ const Kontakt = () => {
         {/* Emergency Contact */}
         <div className="bg-red-600 rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Akut bilrudeservice
+            {c.emergency.title}
           </h3>
           <p className="text-white mb-6">
-            Har du brug for akut hjælp? Vi tilbyder service uden for normal åbningstid efter aftale.
+            {c.emergency.text}
           </p>
           <a 
-            href="tel:24626371" 
+            href={`tel:${c.phoneLink}`} 
             className="inline-block bg-white text-red-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-bold text-lg transition-colors"
           >
-            Ring nu: 24 62 63 71
+            {c.emergency.cta}
           </a>
         </div>
       </div>

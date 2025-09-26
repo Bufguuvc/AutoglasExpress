@@ -1,23 +1,13 @@
 import React from 'react';
 import { Shield, Clock, Award, CheckCircle } from 'lucide-react';
+import content from '../content/site.json';
 
 const Autoruder = () => {
+  const c = content.autoruder;
   const features = [
-    {
-      icon: Clock,
-      title: '4-5 timers service',
-      description: 'Hurtig udskiftning af bilruder, så du kan komme videre samme dag'
-    },
-    {
-      icon: Shield,
-      title: '2 års garanti',
-      description: 'Fuld garanti på både bilruder og korrekt montering'
-    },
-    {
-      icon: Award,
-      title: 'Professionel kvalitet',
-      description: 'Over 20 års erfaring med bilrudeservice'
-    }
+    { icon: Clock, ...c.features[0] },
+    { icon: Shield, ...c.features[1] },
+    { icon: Award, ...c.features[2] }
   ];
 
   return (
@@ -26,11 +16,10 @@ const Autoruder = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Autoruder
+            {c.title}
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Professionel udskiftning af bilruder med hurtig service og høj kvalitet. 
-            Vi gør biler med airbags køreklar i løbet af 4-5 timer.
+            {c.subtitle}
           </p>
         </div>
 
@@ -59,51 +48,21 @@ const Autoruder = () => {
               Hvorfor vælge os til din bilrude?
             </h2>
             <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Hurtig service</h4>
-                  <p className="text-gray-400">
-                    Vi kan udskifte din bilrude og gøre biler med airbags køreklar på 4-5 timer
-                  </p>
+              {c.benefits.map((benefit, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="text-lg font-semibold text-white">{benefit.title}</h4>
+                    <p className="text-gray-400">{benefit.text}</p>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Kvalitetsruder</h4>
-                  <p className="text-gray-400">
-                    Vi bruger kun originale eller tilsvarende kvalitetsruder fra anerkendte leverandører
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Forsikringsdækning</h4>
-                  <p className="text-gray-400">
-                    Glasskader er ofte dækket af din kaskoforsikring - vi hjælper med papirarbejdet
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-3">
-                <CheckCircle className="w-6 h-6 text-[#09a9d5] mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="text-lg font-semibold text-white">Gratis kundebil</h4>
-                  <p className="text-gray-400">
-                    Ved udskiftning af forrude tilbyder vi gratis kundebil, så du kan komme rundt
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           
           <div>
             <img 
-              src="/Bjarne_Larsen.png" 
+              src={c.heroImage} 
               alt="Professionel bilrudeudskiftning"
               className="w-full rounded-lg shadow-lg"
             />
@@ -113,16 +72,16 @@ const Autoruder = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <h3 className="text-2xl font-bold text-white mb-4">
-            Har du brug for en ny bilrude?
+            {c.cta.title}
           </h3>
           <p className="text-gray-300 mb-8">
-            Kontakt os i dag for et uforpligtende tilbud
+            {c.cta.subtitle}
           </p>
           <a 
-            href="tel:24626371" 
+            href={`tel:${content.global.phoneLink}`} 
             className="inline-block bg-[#09a9d5] hover:bg-[#0891b2] text-white px-8 py-3 rounded-lg font-medium text-lg transition-colors"
           >
-            Ring nu: 24 62 63 71
+            Ring nu: {content.global.phone}
           </a>
         </div>
       </div>

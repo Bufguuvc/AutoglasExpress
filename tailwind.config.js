@@ -5,5 +5,6 @@ export default {
     "./src/**/*.{ts,tsx,js,jsx}"
   ],
   theme: { extend: {} },
-  plugins: []
+  plugins: [],
+  corePlugins: { preflight: false }
 }
