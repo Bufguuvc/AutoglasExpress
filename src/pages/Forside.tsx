@@ -52,7 +52,7 @@ const Forside = () => {
   return (
     <div className="min-h-screen bg-[#212529]">
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden" style={{ marginTop: '-15px' }}>
+      <section className="relative h-screen flex flex-col justify-center items-center overflow-hidden" style={{ marginTop: '-1rem' }}>
         {/* Background Video/Image Container */}
         <div className="absolute inset-0 w-full h-full">
           {/* Fallback Image - Always present */}
