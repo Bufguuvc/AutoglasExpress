@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/FaviconAutoglasexpress.jpg" />
+    <link rel="shortcut icon" type="image/jpeg" href="/FaviconAutoglasexpress.jpg" />
+    <link rel="apple-touch-icon" href="/FaviconAutoglasexpress.jpg" />
+    <link rel="icon" type="image/jpeg" href="FaviconAutoglasexpress.jpg" />
+    <link rel="shortcut icon" type="image/jpeg" href="FaviconAutoglasexpress.jpg" />
+    <link rel="apple-touch-icon" href="FaviconAutoglasexpress.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autoglas Express Minimalistic Website</title>
+    <script type="module" crossorigin src="/assets/index-cltj4bqc.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-cmpnos-t.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Dynamic image management system
+      fetch('images.json')
+        .then(response => response.json())
+        .then(imageMap => {
+          document.querySelectorAll('[data-image-id]').forEach(element => {
+            const imageId = element.getAttribute('data-image-id');
+            const imagePath = imageMap[imageId];
+            
+            if (!imagePath) {
+              console.warn(`No image mapping found for id: ${imageId}`);
+              return;
+            }
+            
+            // Check if file exists by trying to load it
+            const img = new Image();
+            img.onload = () => {
+              // Find img element inside or apply as background
+              const imgElement = element.querySelector('img');
+              if (imgElement) {
+                imgElement.src = imagePath;
+              } else {
+                // Apply as background image to the element or its main visual child
+                const visualChild = element.querySelector('.bg-cover, .bg-center, [style*="background"]') || element;
+                visualChild.style.backgroundImage = `url(${imagePath})`;
+              }
+            };
+            img.onerror = () => {
+              console.warn(`Image file not found: ${imagePath} for id: ${imageId}`);
+            };
+            img.src = imagePath;
+          });
+        })
+        .catch(error => {
+          console.error('Failed to load images.json:', error);
+        });
+    </script>
+  </body>
+</html>
