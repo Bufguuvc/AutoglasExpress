@@ -39,25 +39,36 @@ const Forside = () => {
             loop
             muted
             playsInline
-            preload="metadata"
+            preload="auto"
             className="w-full h-full object-cover transition-opacity duration-500"
             style={{ 
               filter: 'contrast(1.1) brightness(0.9)',
               objectPosition: 'center center'
             }}
+            poster="/bjarne_larsen.png"
             onLoadedData={(e) => {
               // Hide fallback when video loads successfully
               const fallback = e.currentTarget.parentElement?.querySelector('div') as HTMLElement;
               if (fallback) fallback.style.opacity = '0';
+              console.log('Video loaded successfully');
             }}
             onError={(e) => {
               // Hide broken video and show fallback
               e.currentTarget.style.display = 'none';
-              console.warn('Video failed to load, using fallback image');
+              const fallback = e.currentTarget.parentElement?.querySelector('div') as HTMLElement;
+              if (fallback) fallback.style.opacity = '1';
+              console.error('Video failed to load, using fallback image');
+            }}
+            onCanPlay={() => {
+              console.log('Video can start playing');
+            }}
+            onLoadStart={() => {
+              console.log('Video load started');
             }}
             aria-label="Autoglas Express Rudeskift Service Video"
           >
             <source src="/Rudeskift_video.mp4" type="video/mp4" />
+            <source src="/Rudeskift_video.webm" type="video/webm" />
             
             {/* Fallback for browsers that don't support video */}
             <img 
