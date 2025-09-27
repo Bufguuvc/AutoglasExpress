@@ -1,44 +1,29 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/FaviconAutoglasexpress.jpg" />
-    <link rel="shortcut icon" type="image/jpeg" href="/FaviconAutoglasexpress.jpg" />
-    <link rel="apple-touch-icon" href="/FaviconAutoglasexpress.jpg" />
-    <link rel="icon" type="image/jpeg" href="FaviconAutoglasexpress.jpg" />
-    <link rel="shortcut icon" type="image/jpeg" href="FaviconAutoglasexpress.jpg" />
-    <link rel="apple-touch-icon" href="FaviconAutoglasexpress.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AutoglasExpress - Udskiftning af autoruder på │ Fyn Montering af solfilm - stenslag </title>
-    <script type="module" crossorigin src="/assets/index-cltj4bqc.js"></script>
-    <!doctype html>
 <html lang="da">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Autoglas Express</title>
-    <meta name="description" content="Udskiftning og reparation af autoruder, kalibrering, solfilm og stenslag. Hurtig service i hele området." />
+    <title>Autoglas Express - Udskiftning af autoruder på │ Fyn Montering af solfilm - stenslag</title>
+    <meta name="description" content="Udskiftning og reparation af autoruder, kalibrering, solfilm og stenslag. Hurtig service i hele området.">
 
-    <!-- Favicon -->
+    <!-- Favicon (pick the correct file you actually have in /public) -->
     <link rel="icon" href="/public/favicon_autoglasexpress.jpg" />
 
-    <!-- Main production CSS from the Netlify build (do not change path) -->
-    <link rel="stylesheet" href="/assets/index-cmpnos-t.css" />
-
-    <!-- Optional: basic SEO/canonical -->
+    <!-- Production CSS from Netlify build -->
+    <link rel="stylesheet" href="/assets/index-cmpnos-t.css">
     <link rel="canonical" href="/" />
   </head>
   <body>
     <!-- React/Vite app mounts here -->
     <div id="root"></div>
 
-    <!-- Your production JS bundle (keep as-is) -->
+    <!-- Production JS bundle from Netlify build -->
     <script type="module" src="/assets/index-cltj4bqc.js"></script>
 
-    <!-- ======= PASTE FROM HERE DOWN ======= -->
+    <!-- ======= PASTE YOUR RUNTIME CONFIG BELOW (AFTER BUNDLE, BEFORE </body>) ======= -->
 
-    <!-- (A) Carousel images, in the order you want -->
+    <!-- (A) Carousel images, in your required order -->
     <script id="insurance-images" type="application/json">
       [
         "/public/f8.png",
@@ -52,7 +37,7 @@
       ]
     </script>
 
-    <!-- (B) Optional: global image rewrites (expand later as needed) -->
+    <!-- (B) Optional: global image rewrites (add more pairs later as needed) -->
     <script id="image-rewrites" type="application/json">
       {
         "logo": "/public/logo-new.png",
@@ -63,49 +48,6 @@
     <!-- (C) Runtime patcher that reads the JSON above and rewires images -->
     <script src="/public/site.js"></script>
 
-    <!-- ======= STOP PASTING ABOVE ======= -->
-  </body>
-</html>
-    <link rel="stylesheet" crossorigin href="/assets/index-cmpnos-t.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      // Dynamic image management system
-      fetch('images.json')
-        .then(response => response.json())
-        .then(imageMap => {
-          document.querySelectorAll('[data-image-id]').forEach(element => {
-            const imageId = element.getAttribute('data-image-id');
-            const imagePath = imageMap[imageId];
-            
-            if (!imagePath) {
-              console.warn(`No image mapping found for id: ${imageId}`);
-              return;
-            }
-            
-            // Check if file exists by trying to load it
-            const img = new Image();
-            img.onload = () => {
-              // Find img element inside or apply as background
-              const imgElement = element.querySelector('img');
-              if (imgElement) {
-                imgElement.src = imagePath;
-              } else {
-                // Apply as background image to the element or its main visual child
-                const visualChild = element.querySelector('.bg-cover, .bg-center, [style*="background"]') || element;
-                visualChild.style.backgroundImage = `url(${imagePath})`;
-              }
-            };
-            img.onerror = () => {
-              console.warn(`Image file not found: ${imagePath} for id: ${imageId}`);
-            };
-            img.src = imagePath;
-          });
-        })
-        .catch(error => {
-          console.error('Failed to load images.json:', error);
-        });
-    </script>
+    <!-- ======= END RUNTIME CONFIG ======= -->
   </body>
 </html>
