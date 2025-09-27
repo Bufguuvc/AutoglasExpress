@@ -18,25 +18,23 @@
 
     <script type="module" src="/assets/index-cltj4bqc.js"></script>
 
-    <script id="insurance-images" type="application/json">
-      [
-        "/public/f8.png",
-        "/public/f7.png",
-        "/public/f6.png",
-        "/public/f5.png",
-        "/public/f4.png",
-        "/public/f3.png",
-        "/public/f2.png",
-        "/public/f1.png"
-      ]
-    </script>
+    <script>
+  window.__imageOverrides = {
+    headerLogo: "/public/logo-test.png",
+    hero: "/public/hero-new.jpg",
+    carousel: [
+      "/public/f8.png",
+      "/public/f7.png",
+      "/public/f6.png",
+      "/public/f5.png",
+      "/public/f4.png",
+      "/public/f3.png",
+      "/public/f2.png",
+      "/public/f1.png"
+    ]
+  };
+</script>
+<script src="/public/site.js"></script>
 
-    <script id="image-rewrites" type="application/json">
-      {
-        "headerLogo": "/public/logo-test.png"
-      }
-    </script>
-
-    <script src="/public/site.js"></script>
   </body>
 </html>
