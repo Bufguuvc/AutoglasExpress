@@ -83,7 +83,7 @@ const Forside = () => {
         {/* Company Logo Headline - Vertically Centered */}
         <div className="relative z-10 text-center flex flex-col items-center justify-center">
           <h1 className="relative z-[1] m-0 leading-none text-[clamp(40px,6vw,84px)] font-bold text-white mb-4 hero-title-mobile">
-            <span>{c.heroTitle.split('E')[0]}E</span><span className="text-[#09a9d5]">x</span><span>press</span>
+            <span>{c.heroTitle}</span>
           </h1>
           <div className="mt-4 text-center">
             <a 
