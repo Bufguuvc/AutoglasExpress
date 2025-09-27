@@ -18,20 +18,39 @@
 
     <script type="module" src="/assets/index-cltj4bqc.js"></script>
 
-    <script>
-  window.__imageOverrides = {
-    headerLogo: "/public/logo-test.png",
-    hero: "/public/hero-new.jpg",
-    carousel: [
-      "/public/f8.png",
-      "/public/f7.png",
-      "/public/f6.png",
-      "/public/f5.png",
-      "/public/f4.png",
-      "/public/f3.png",
-      "/public/f2.png",
-      "/public/f1.png"
-    ]
+<script>
+  window.__uiOverrides = {
+    images: {
+      headerLogo: "/public/logo-test.png",
+      hero: "/public/hero-new.jpg",
+      carousel: [
+        "/public/f8.png",
+        "/public/f7.png",
+        "/public/f6.png",
+        "/public/f5.png",
+        "/public/f4.png",
+        "/public/f3.png",
+        "/public/f2.png",
+        "/public/f1.png"
+      ],
+      bySelector: {
+        "img[alt='partner1']": "/public/partner1.png"
+      }
+    },
+    text: {
+      bySelector: {
+        ".cta .btn-primary": "Book nu",
+        "nav a[href*='kontakt']": "Kontakt"
+      },
+      replaceByContent: [
+        { find: "Kontakt os", replace: "Book nu", scope: "button, a" }
+      ]
+    },
+    links: {
+      bySelector: {
+        "a.btn-primary": "/kontakt"
+      }
+    }
   };
 </script>
 <script src="/public/site.js"></script>
