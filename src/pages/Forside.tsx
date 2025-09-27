@@ -57,7 +57,7 @@ const Forside = () => {
             }}
             aria-label="Autoglas Express Rudeskift Service Video"
           >
-            <source src="/rudeskift.mp4" type="video/mp4" />
+            <source src="/Rudeskift_video.mp4" type="video/mp4" />
             
             {/* Fallback for browsers that don't support video */}
             <img 
