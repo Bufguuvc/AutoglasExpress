@@ -4,14 +4,14 @@ const InsuranceCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const insuranceLogos = [
-    { name: 'Alka', logo: '/4.png' },
-    { name: 'Tryg', logo: '/6.png' },
-    { name: 'Codan', logo: '/4.png' },
-    { name: 'Topdanmark', logo: '/6.png' },
-    { name: 'If', logo: '/4.png' },
-    { name: 'Gjensidige', logo: '/6.png' },
-    { name: 'Lærerstandens', logo: '/4.png' },
-    { name: 'Moderna', logo: '/6.png' }
+    { name: 'Insurance 1', logo: '/f8.png' },
+    { name: 'Insurance 2', logo: '/f7.png' },
+    { name: 'Insurance 3', logo: '/f6.png' },
+    { name: 'Insurance 4', logo: '/f5.png' },
+    { name: 'Insurance 5', logo: '/f4.png' },
+    { name: 'Insurance 6', logo: '/f3.png' },
+    { name: 'Insurance 7', logo: '/f2.png' },
+    { name: 'Insurance 8', logo: '/f1.png' }
   ];
 
   useEffect(() => {
