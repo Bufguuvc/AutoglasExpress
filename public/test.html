@@ -1,56 +1,90 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="/FaviconAutoglasexpress.jpg" />
-    <link rel="shortcut icon" type="image/jpeg" href="/FaviconAutoglasexpress.jpg" />
-    <link rel="apple-touch-icon" href="/FaviconAutoglasexpress.jpg" />
-    <link rel="icon" type="image/jpeg" href="FaviconAutoglasexpress.jpg" />
-    <link rel="shortcut icon" type="image/jpeg" href="FaviconAutoglasexpress.jpg" />
-    <link rel="apple-touch-icon" href="FaviconAutoglasexpress.jpg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autoglas Express Minimalistic Website</title>
-    <script type="module" crossorigin src="/assets/index-cltj4bqc.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-cmpnos-t.css">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      // Dynamic image management system
-      fetch('images.json')
-        .then(response => response.json())
-        .then(imageMap => {
-          document.querySelectorAll('[data-image-id]').forEach(element => {
-            const imageId = element.getAttribute('data-image-id');
-            const imagePath = imageMap[imageId];
-            
-            if (!imagePath) {
-              console.warn(`No image mapping found for id: ${imageId}`);
-              return;
-            }
-            
-            // Check if file exists by trying to load it
-            const img = new Image();
-            img.onload = () => {
-              // Find img element inside or apply as background
-              const imgElement = element.querySelector('img');
-              if (imgElement) {
-                imgElement.src = imagePath;
-              } else {
-                // Apply as background image to the element or its main visual child
-                const visualChild = element.querySelector('.bg-cover, .bg-center, [style*="background"]') || element;
-                visualChild.style.backgroundImage = `url(${imagePath})`;
-              }
-            };
-            img.onerror = () => {
-              console.warn(`Image file not found: ${imagePath} for id: ${imageId}`);
-            };
-            img.src = imagePath;
-          });
-        })
-        .catch(error => {
-          console.error('Failed to load images.json:', error);
-        });
-    </script>
-  </body>
-</html>
+// /public/site.js
+(function () {
+  function parseJSONFromScript(id) {
+    const el = document.getElementById(id);
+    if (!el) return null;
+    try { return JSON.parse(el.textContent.trim()); }
+    catch (e) { console.warn(`[site.js] Bad JSON in #${id}:`, e); return null; }
+  }
+
+  const insuranceImages = parseJSONFromScript('insurance-images') || [];
+  const imageRewrites   = parseJSONFromScript('image-rewrites')   || {};
+
+  function fileExists(url) {
+    return new Promise(resolve => {
+      const img = new Image();
+      img.onload = () => resolve(true);
+      img.onerror = () => resolve(false);
+      img.src = url;
+    });
+  }
+
+  async function applyInsuranceCarousel() {
+    if (!insuranceImages.length) return;
+
+    // Try likely containers first, then fall back.
+    const candidates = [
+      '[data-insurance-carousel]',
+      '[aria-label*="forsik"]',
+      '[aria-label*="insurance"]',
+      '.slick-slider', '.keen-slider', '.swiper',
+      '[class*="carousel"]'
+    ];
+
+    let container = null;
+    for (const sel of candidates) {
+      const found = document.querySelector(sel);
+      if (found) { container = found; break; }
+    }
+    if (!container) {
+      // Fallback: a section with 6–12 images (typical logo strip)
+      const groups = Array.from(document.querySelectorAll('section, div'))
+        .map(el => ({ el, imgs: el.querySelectorAll('img') }))
+        .filter(x => x.imgs.length >= 6 && x.imgs.length <= 12);
+      if (groups.length) container = groups[0].el;
+    }
+    if (!container) {
+      console.warn('[site.js] Could not find the insurance carousel container.');
+      return;
+    }
+
+    const imgs = Array.from(container.querySelectorAll('img'));
+    if (!imgs.length) {
+      console.warn('[site.js] Carousel container has no <img> elements yet.');
+      return;
+    }
+
+    const count = Math.min(imgs.length, insuranceImages.length);
+    for (let i = 0; i < count; i++) {
+      const wanted = insuranceImages[i].replace(/^\/public\//, '/public/');
+      // eslint-disable-next-line no-await-in-loop
+      const ok = await fileExists(wanted);
+      if (!ok) { console.warn(`[site.js] File not found: ${wanted}`); continue; }
+      imgs[i].src = wanted;
+      imgs[i].alt = imgs[i].alt || `Insurance logo ${i + 1}`;
+      imgs[i].decoding = 'async';
+      imgs[i].loading = imgs[i].loading || 'lazy';
+    }
+
+    console.info('[site.js] Insurance carousel images applied.');
+  }
+
+  function applyGlobalImageRewrites() {
+    if (imageRewrites.favicon) {
+      document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]').forEach(link => {
+        link.href = imageRewrites.favicon;
+      });
+    }
+  }
+
+  const start = () => {
+    applyGlobalImageRewrites();
+    applyInsuranceCarousel();
+  };
+
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(start, 200);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(start, 200));
+  }
+})();
